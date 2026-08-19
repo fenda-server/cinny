@@ -133,9 +133,8 @@ export function AuthLayout() {
       >
         <Box direction="Column" className={css.AuthCard}>
           <Header className={css.AuthHeader} size="600" variant="Surface">
-            <Box grow="Yes" direction="Row" gap="300" alignItems="Center">
-              <img className={css.AuthLogo} src={VarandaSVG} alt="Varanda Logo" />
-              <Text size="H3">Varanda</Text>
+            <Box grow="Yes" direction="Row" justifyContent="Center" alignItems="Center">
+              <img className={css.AuthLogo} src={VarandaSVG} alt="Varanda" />
             </Box>
           </Header>
           <Box className={css.AuthCardContent} direction="Column">
