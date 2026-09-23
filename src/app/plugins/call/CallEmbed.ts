@@ -15,6 +15,7 @@ import {
   WidgetApiToWidgetAction,
   WidgetDriver,
 } from 'matrix-widget-api';
+import { version as elementCallVersion } from '@element-hq/element-call-embedded/package.json';
 import { CallWidgetDriver } from './CallWidgetDriver';
 import { trimTrailingSlash } from '../../utils/common';
 import {
@@ -116,6 +117,9 @@ export class CallEmbed {
       `${trimTrailingSlash(import.meta.env.BASE_URL)}/public/element-call/index.html`,
       window.location.origin
     );
+    // Makes browsers drop a cached Element Call page from a previous version,
+    // which would load assets that no longer exist.
+    params.append('ecVersion', elementCallVersion);
     widgetUrl.search = params.toString();
 
     const options: IWidget = {
